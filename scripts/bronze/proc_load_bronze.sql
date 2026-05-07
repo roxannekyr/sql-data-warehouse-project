@@ -45,7 +45,7 @@ begin
         print(' >> Inserting Data Into : bronze.crm_cust_info');
         bulk insert bronze.crm_cust_info
         -- Placing the path of the file from where we will load the data from & after also the file name (form like: sourcefilepath_filename)
-        from 'C:\Users\roxan\Desktop\Personal\Learning & Development\8. SQL\Data with Baraa\Roxani querying\Projects\sql-data-warehouse-project\datasets\source_crm\cust_info.csv'
+        from 'C:\Users\roxan\SQL\Projects\sql-data-warehouse-project\datasets\source_crm\cust_info.csv'
 
         with(
         -- Since in the file the 1st row is headers and we have already defined that in our table, SQL should take data from 1st data row (non headers)
@@ -80,7 +80,7 @@ begin
 
         print(' >> Inserting Data Into : bronze.crm_prd_info');
         bulk insert bronze.crm_prd_info
-        from 'C:\Users\roxan\Desktop\Personal\Learning & Development\8. SQL\Data with Baraa\Roxani querying\Projects\sql-data-warehouse-project\datasets\source_crm\prd_info.csv'
+        from 'C:\Users\roxan\SQL\Projects\sql-data-warehouse-project\datasets\source_crm\prd_info.csv'
 
         with(
         -- Since in the file the 1st row is headers and we have already defined that in our table, SQL should take data from 1st data row (non headers)
@@ -112,7 +112,7 @@ begin
 
         print(' >> Inserting Data Into : bronze.crm_sales_details');
         bulk insert bronze.crm_sales_details
-        from 'C:\Users\roxan\Desktop\Personal\Learning & Development\8. SQL\Data with Baraa\Roxani querying\Projects\sql-data-warehouse-project\datasets\source_crm\sales_details.csv'
+        from 'C:\Users\roxan\SQL\Projects\sql-data-warehouse-project\datasets\source_crm\sales_details.csv'
 
         with(
         -- Since in the file the 1st row is headers and we have already defined that in our table, SQL should take data from 1st data row (non headers)
@@ -148,7 +148,7 @@ begin
 
         print(' >> Inserting Data Into : bronze.erp_CUST_AZ12');
         bulk insert bronze.erp_CUST_AZ12
-        from 'C:\Users\roxan\Desktop\Personal\Learning & Development\8. SQL\Data with Baraa\Roxani querying\Projects\sql-data-warehouse-project\datasets\source_erp\CUST_AZ12.csv'
+        from 'C:\Users\roxan\SQL\Projects\sql-data-warehouse-project\datasets\source_erp\CUST_AZ12.csv'
 
         with(
         -- Since in the file the 1st row is headers and we have already defined that in our table, SQL should take data from 1st data row (non headers)
@@ -181,7 +181,7 @@ begin
 
         print(' >> Inserting Data Into : bronze.erp_LOC_A101');
         bulk insert bronze.erp_LOC_A101
-        from 'C:\Users\roxan\Desktop\Personal\Learning & Development\8. SQL\Data with Baraa\Roxani querying\Projects\sql-data-warehouse-project\datasets\source_erp\LOC_A101.csv'
+        from 'C:\Users\roxan\SQL\Projects\sql-data-warehouse-project\datasets\source_erp\LOC_A101.csv'
 
         with(
         -- Since in the file the 1st row is headers and we have already defined that in our table, SQL should take data from 1st data row (non headers)
@@ -214,7 +214,7 @@ begin
 
         print(' >> Inserting Data Into : erp_PX_CAT_G1V2');
         bulk insert bronze.erp_PX_CAT_G1V2
-        from 'C:\Users\roxan\Desktop\Personal\Learning & Development\8. SQL\Data with Baraa\Roxani querying\Projects\sql-data-warehouse-project\datasets\source_erp\PX_CAT_G1V2.csv'
+        from 'C:\Users\roxan\SQL\Projects\sql-data-warehouse-project\datasets\source_erp\PX_CAT_G1V2.csv'
 
         with(
         -- Since in the file the 1st row is headers and we have already defined that in our table, SQL should take data from 1st data row (non headers)
