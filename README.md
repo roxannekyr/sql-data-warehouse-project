@@ -116,6 +116,7 @@ The Gold layer supports:
 
 ## 📁 Repository Structure
 
+```plaintext
 ├── datasets/          # Source CSV files (CRM & ERP)
 ├── documents/         # Architecture diagrams & data catalogue
 │   ├── High_Level_Architecture.png
@@ -126,6 +127,7 @@ The Gold layer supports:
 ├── qa/                # Quality assurance scripts
 ├── scripts/           # SQL scripts (Bronze / Silver / Gold)
 └── README.md
+```
 
 ---
 
