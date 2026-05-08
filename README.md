@@ -1,4 +1,4 @@
-# SQL Server Data Warehouse — Medallion Architecture
+# SQL Server Data Warehouse with Medallion Architecture
 
 A production-style data warehouse built in SQL Server implementing the **medallion (Bronze → Silver → Gold)** layered architecture. Ingests data from two heterogeneous source systems (CRM + ERP), applies systematic data cleansing, and delivers an analytics-ready star schema for downstream reporting.
 
