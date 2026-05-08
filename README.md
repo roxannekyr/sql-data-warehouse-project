@@ -4,7 +4,7 @@ A production-style data warehouse built in SQL Server implementing the **medalli
 
 ---
 
-## 📋 Tasks Overview
+## Tasks Overview
 
 Full project management board (phases, tasks, and status) tracked in Notion:
 
