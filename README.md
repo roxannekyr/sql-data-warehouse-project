@@ -135,6 +135,7 @@ The Gold layer supports:
 
 - **Database**: Microsoft SQL Server
 - **Language**: T-SQL
+- **Diagrams**: draw.io
 - **Architecture Pattern**: Medallion (Bronze → Silver → Gold)
 - **Data Modeling**: Star Schema
 - **Project Tracking**: Notion
