@@ -105,7 +105,7 @@ Tables are integrated across CRM and ERP sources using shared keys:
 
 ---
 
-## 📊 Consumption Layer
+## Consumption Layer
 
 The Gold layer supports:
 - **BI & Reporting** (Power BI, SSRS, etc.)
@@ -114,7 +114,7 @@ The Gold layer supports:
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```plaintext
 ├── datasets/          # Source CSV files (CRM & ERP)
@@ -131,7 +131,7 @@ The Gold layer supports:
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Database**: Microsoft SQL Server
 - **Language**: T-SQL
