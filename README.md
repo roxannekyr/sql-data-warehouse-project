@@ -13,10 +13,10 @@ Full project management board (phases, tasks, and status) tracked in Notion:
 ---
 ## Architecture Overview
 
-![Diagram](docs/High_Level_Architecture.png)
+![Diagram](documents/High_Level_Architecture.png)
 
-![Diagram](docs/Integration_Model.png)
+![Diagram](documents/Integration_Model.png)
 
-![Diagram](docs/Data_Flow.png)
+![Diagram](documents/Data_Flow.png)
 
-![Diagram](docs/Data_Model.png)
+![Diagram](documents/Data_Model.png)
