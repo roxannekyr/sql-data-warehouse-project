@@ -13,11 +13,19 @@ Script Purpose:
 ===============================================================================
 */
 
+-- =============================================================================
+-- Checking Dimension : gold.dim_customers
+-- =============================================================================
+	
 use DataWarehouse
 select * from gold.dim_customers;
 
 -- Checking column that we adjusted with intergrating data from both sources
 select distinct gender from gold.dim_customers;
+
+-- =============================================================================
+-- Checking Dimension : gold.dim_products
+-- =============================================================================
 
 -- Checking data from view for products dimension
 use DataWarehouse;
