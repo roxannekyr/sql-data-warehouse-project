@@ -8,12 +8,12 @@ Script Purpose:
 
     Each view performs transformations and combines data from the Silver layer
     to produce a clean, enriched, and business-ready dataset.
-
-Usage:
-    - These views can be queried directly for analytics and reporting.
 ===============================================================================
 */
 
+-- ============================================================================
+-- Create Dimension : gold.dim_customers
+-- ============================================================================
 go
 drop view if exists gold.dim_customers;
 go
@@ -37,6 +37,10 @@ left join silver.erp_cust_az12 as ca
 left join silver.erp_loc_a101 as la
     on ci.cst_key=la.cid;
 
+-- ============================================================================
+-- Create Dimension : gold.dim_products
+-- ============================================================================
+
 go
 drop view if exists gold.dim_products;
 go
@@ -58,7 +62,9 @@ left join silver.erp_px_cat_g1v2 as perp
 	on pcrm.category_id=perp.id
 where prd_end_dt is null;
 
-
+-- ============================================================================
+-- Create Dimension : gold.fact_sales
+-- ============================================================================
 
 go
 drop view if exists gold.fact_sales;
