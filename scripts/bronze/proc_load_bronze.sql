@@ -32,47 +32,27 @@ begin
         print('Loading CRM Tables');
         print('-----------------------------------------------------------------------------------------------------------');
     
-        -- Source CRM , file cust_info
-        -- Deleting any data that exists in table from file cust_info of source crm to bronze layer, to make the table empty 
-        
         set @start_time = getdate();
         print(' >> Truncating table : bronze.crm_cust_info');
         truncate table bronze.crm_cust_info;
 
-        -- Data Ingestion begins from file cust_info of source crm to bronze layer
-        -- When executing the bulk insert we need to not have open relevant file from where we will take the data for ingestion
-
         print(' >> Inserting Data Into : bronze.crm_cust_info');
         bulk insert bronze.crm_cust_info
-        -- Placing the path of the file from where we will load the data from & after also the file name (form like: sourcefilepath_filename)
+            
         from 'C:\Users\roxan\SQL\Projects\sql-data-warehouse-project\datasets\source_crm\cust_info.csv'
 
         with(
-        -- Since in the file the 1st row is headers and we have already defined that in our table, SQL should take data from 1st data row (non headers)
             firstrow=2,
-        -- Delimeter
             fieldterminator=',',
-        -- Using tablock for better table perfomance
             tablock
         );
            
         -- Testing the quality of the 'bronze.crm_cust_info' table that was just ingested with data
         -- select * from bronze.crm_cust_info;
-        -- Checks
-        -- 1. if data are placed in all columns
-        -- 2. if data have been placed in the correct columns
-        -- select count(*) from bronze.crm_cust_info;
-        -- Checks
-        -- 3. counting rows for the table & check from our file how many rows we had there. Here we need to remember if in file we had also 
-        -- a header for columns that will not appear of course here
-        -- ALERT !!!
-        -- if we run again the bulk insert we will refill the table with 1 more time same data, meaning having duplicate for each row record
 
         set @end_time = getdate();
         print(' >> Load Duration: ' + cast(datediff(second,@start_time,@end_time) as nvarchar) + ' seconds'); 
         print(' >> ----------------');
-
-        -- Source CRM , file prd_info
 
         set @start_time = getdate();
         print(' >> Truncating table : bronze.crm_prd_info');
@@ -83,28 +63,17 @@ begin
         from 'C:\Users\roxan\SQL\Projects\sql-data-warehouse-project\datasets\source_crm\prd_info.csv'
 
         with(
-        -- Since in the file the 1st row is headers and we have already defined that in our table, SQL should take data from 1st data row (non headers)
             firstrow=2,
-        -- Delimeter
             fieldterminator=',',
-        -- Using tablock for better table perfomance
             tablock
         );
 
         -- Testing the quality of the 'bronze.crm_prd_info' table that was just ingested with data
         -- select * from bronze.crm_prd_info;
-        -- Checks
-        -- 1. if data are placed in all columns
-        -- 2. if data have been placed in the correct columns
-        -- select count(*) from bronze.crm_prd_info;
-        -- 3. counting rows for the table & check from our file how many rows we had there. Here we need to remember if in file we had also 
-        -- a header for columns that will not appear of course here
 
         set @end_time = getdate();
         print(' >> Load Duration: ' + cast(datediff(second,@start_time,@end_time) as nvarchar) + ' seconds'); 
         print(' >> ----------------');
-
-        -- Source CRM , file sales_details
 
         set @start_time = getdate();
         print(' >> Truncating table : bronze.crm_sales_details');
@@ -115,22 +84,13 @@ begin
         from 'C:\Users\roxan\SQL\Projects\sql-data-warehouse-project\datasets\source_crm\sales_details.csv'
 
         with(
-        -- Since in the file the 1st row is headers and we have already defined that in our table, SQL should take data from 1st data row (non headers)
             firstrow=2,
-        -- Delimeter
             fieldterminator=',',
-        -- Using tablock for better table perfomance
             tablock
         );
 
         -- Testing the quality of the 'bronze.crm_prd_info' table that was just ingested with data
         -- select * from bronze.crm_sales_details;
-        -- Checks
-        -- 1. if data are placed in all columns
-        -- 2. if data have been placed in the correct columns
-        -- select count(*) from bronze.crm_sales_details;
-        -- 3. counting rows for the table & check from our file how many rows we had there. Here we need to remember if in file we had also 
-        -- a header for columns that will not appear of course here
 
         set @end_time = getdate();
         print(' >> Load Duration: ' + cast(datediff(second,@start_time,@end_time) as nvarchar) + ' seconds'); 
@@ -139,8 +99,6 @@ begin
         print('-----------------------------------------------------------------------------------------------------------');
         print('Loading ERP Tables');
         print('-----------------------------------------------------------------------------------------------------------');
-
-        -- Source ERP , file CUST_AZ12
 
         set @start_time = getdate();
         print(' >> Truncating table : bronze.erp_CUST_AZ12');
@@ -151,29 +109,17 @@ begin
         from 'C:\Users\roxan\SQL\Projects\sql-data-warehouse-project\datasets\source_erp\CUST_AZ12.csv'
 
         with(
-        -- Since in the file the 1st row is headers and we have already defined that in our table, SQL should take data from 1st data row (non headers)
             firstrow=2,
-        -- Delimeter
             fieldterminator=',',
-        -- Using tablock for better table perfomance
             tablock
         );
 
         -- Testing the quality of the 'bronze.erp_CUST_AZ12' table that was just ingested with data
         -- select * from bronze.erp_CUST_AZ12;
-        -- Checks
-        -- 1. if data are placed in all columns
-        -- 2. if data have been placed in the correct columns
-        -- select count(*) from bronze.erp_CUST_AZ12;
-        -- 3. counting rows for the table & check from our file how many rows we had there. Here we need to remember if in file we had also 
-        -- a header for columns that will not appear of course here
 
         set @end_time = getdate();
         print(' >> Load Duration: ' + cast(datediff(second,@start_time,@end_time) as nvarchar) + ' seconds'); 
         print(' >> ----------------');
-
-
-        -- Source ERP , file LOC_A101
 
         set @start_time = getdate();
         print(' >> Truncating table : bronze.erp_LOC_A101');
@@ -184,29 +130,17 @@ begin
         from 'C:\Users\roxan\SQL\Projects\sql-data-warehouse-project\datasets\source_erp\LOC_A101.csv'
 
         with(
-        -- Since in the file the 1st row is headers and we have already defined that in our table, SQL should take data from 1st data row (non headers)
             firstrow=2,
-        -- Delimeter
             fieldterminator=',',
-        -- Using tablock for better table perfomance
             tablock
         );
 
         -- Testing the quality of the 'bronze.erp_LOC_A101' table that was just ingested with data
         -- select * from bronze.erp_LOC_A101;
-        -- Checks
-        -- 1. if data are placed in all columns
-        -- 2. if data have been placed in the correct columns
-        -- select count(*) from bronze.erp_LOC_A101;
-        -- 3. counting rows for the table & check from our file how many rows we had there. Here we need to remember if in file we had also 
-        -- a header for columns that will not appear of course here
 
         set @end_time = getdate();
         print(' >> Load Duration: ' + cast(datediff(second,@start_time,@end_time) as nvarchar) + ' seconds'); 
         print(' >> ----------------');
-
-
-        -- Source ERP , file PX_CAT_G1V2
 
         set @start_time = getdate();
         print(' >> Truncating table : erp_PX_CAT_G1V2');
@@ -217,22 +151,13 @@ begin
         from 'C:\Users\roxan\SQL\Projects\sql-data-warehouse-project\datasets\source_erp\PX_CAT_G1V2.csv'
 
         with(
-        -- Since in the file the 1st row is headers and we have already defined that in our table, SQL should take data from 1st data row (non headers)
             firstrow=2,
-        -- Delimeter 
             fieldterminator=',',
-        -- Using tablock for better table perfomance
             tablock
         );
 
         -- Testing the quality of the 'bronze.erp_PX_CAT_G1V2' table that was just ingested with data
         -- select * from bronze.erp_PX_CAT_G1V2;
-        -- Checks
-        -- 1. if data are placed in all columns
-        -- 2. if data have been placed in the correct columns
-        -- select count(*) from bronze.erp_PX_CAT_G1V2;
-        -- 3. counting rows for the table & check from our file how many rows we had there. Here we need to remember if in file we had also 
-        -- a header for columns that will not appear of course here
 
         set @end_time = getdate();
         print(' >> Load Duration: ' + cast(datediff(second,@start_time,@end_time) as nvarchar) + ' seconds'); 
