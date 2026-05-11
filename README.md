@@ -1,5 +1,5 @@
 # Data Warehouse & Analytics Engineering Project
-### SQL Server · Medallion Architecture · Star Schema · Business Intelligence
+##### SQL Server · Medallion Architecture · Star Schema · Business Intelligence
 
 ---
 
