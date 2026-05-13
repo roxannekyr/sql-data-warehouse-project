@@ -23,8 +23,6 @@ select	'total_qty' as measure_name,sum(quantity) as measure_value from gold.fact
 		union all
 select	'avg_selling_price' as measure_name, avg(price) as measure_value from gold.fact_sales
 		union all
-select	'total_unique_orders' as measure_name,count(distinct order_number) as measure_value from gold.fact_sales
-		union all
 select	'total_unique_orders' as measure_name, count(distinct order_number) as measure_value from gold.fact_sales
 		union all
 select	'total_unique_customers' as measure_name,count(distinct customer_key) as measure_value from gold.fact_sales;
